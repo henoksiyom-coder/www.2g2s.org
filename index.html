@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2GS | Sustainable Agribusiness & Innovation</title>
+    <title>2G2S | Sustainable Agribusiness & Innovation</title>
     <style>
         /* Base Reset & Typography */
         * {
@@ -11,18 +11,19 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
         }
 
         body {
             color: #333;
-            background-color: #f9f9f9;
+            background-color: #fbfbfb;
             line-height: 1.6;
         }
 
         /* Navigation */
         header {
             background-color: #ffffff;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -34,27 +35,32 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px;
+            padding: 18px 20px;
         }
 
         .logo {
-            font-size: 24px;
-            font-weight: bold;
+            font-size: 26px;
+            font-weight: 800;
             color: #2E7D32; /* Deep Eco Green */
             text-decoration: none;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
+        }
+
+        .logo span {
+            color: #81C784;
         }
 
         .nav-links {
             list-style: none;
             display: flex;
-            gap: 20px;
+            gap: 25px;
         }
 
         .nav-links a {
             text-decoration: none;
-            color: #555;
-            font-weight: 500;
+            color: #444;
+            font-weight: 600;
+            font-size: 15px;
             transition: color 0.3s;
         }
 
@@ -64,9 +70,9 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), 
+            background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.65)), 
                         url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
-            height: 70vh;
+            height: 75vh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -76,61 +82,66 @@
         }
 
         .hero-content h1 {
-            font-size: 48px;
+            font-size: 52px;
             margin-bottom: 20px;
-            font-weight: 700;
+            font-weight: 800;
+            letter-spacing: -0.5px;
         }
 
         .hero-content p {
-            font-size: 20px;
-            margin-bottom: 30px;
-            max-width: 700px;
+            font-size: 21px;
+            margin-bottom: 35px;
+            max-width: 750px;
             margin-left: auto;
             margin-right: auto;
+            color: #e0e0e0;
         }
 
         .cta-btn {
             background-color: #2E7D32;
             color: #fff;
-            padding: 12px 30px;
+            padding: 14px 35px;
             text-decoration: none;
-            font-size: 18px;
-            border-radius: 5px;
+            font-size: 16px;
+            border-radius: 6px;
             font-weight: 600;
-            transition: background 0.3s, transform 0.2s;
+            transition: all 0.3s ease;
             display: inline-block;
+            box-shadow: 0 4px 15px rgba(46, 125, 50, 0.3);
         }
 
         .cta-btn:hover {
             background-color: #1B5E20;
             transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(46, 125, 50, 0.4);
         }
 
-        /* Main Container for Sections */
+        /* Global Section Layout */
         .section-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 60px 20px;
+            padding: 80px 20px;
         }
 
         .section-title {
             text-align: center;
-            font-size: 32px;
+            font-size: 36px;
             color: #1B5E20;
-            margin-bottom: 40px;
-            position: relative;
+            margin-bottom: 50px;
+            font-weight: 700;
         }
 
         .section-title::after {
             content: '';
             display: block;
-            width: 50px;
-            height: 3px;
+            width: 60px;
+            height: 4px;
             background-color: #81C784;
-            margin: 10px auto 0 auto;
+            margin: 12px auto 0 auto;
+            border-radius: 2px;
         }
 
-        /* Pillars / Services Grid */
+        /* Pillars Section */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -139,81 +150,154 @@
 
         .card {
             background: #fff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
             text-align: center;
             border-top: 4px solid #2E7D32;
-            transition: transform 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
         }
 
         .card h3 {
             margin-bottom: 15px;
-            color: #333;
+            color: #222;
+            font-size: 22px;
+        }
+
+        .card p {
+            color: #666;
+            font-size: 15px;
         }
 
         /* About Section */
         .about-section {
-            background-color: #f1f8e9;
-            padding: 60px 20px;
+            background-color: #f4f9f4;
+            padding: 90px 20px;
             text-align: center;
         }
 
         .about-content {
-            max-width: 800px;
+            max-width: 850px;
             margin: 0 auto;
         }
 
         .about-content p {
-            font-size: 18px;
-            color: #555;
-            margin-bottom: 20px;
+            font-size: 19px;
+            color: #4a4a4a;
+            margin-bottom: 25px;
+            line-height: 1.8;
+        }
+
+        /* Product Showcase / Gallery Section */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .gallery-item {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-info {
+            padding: 25px;
+        }
+
+        .gallery-info h4 {
+            font-size: 20px;
+            color: #212121;
+            margin-bottom: 10px;
+        }
+
+        .gallery-info p {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: #e8f5e9;
+            color: #2e7d32;
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
         }
 
         /* Contact Section */
         .contact-form {
-            max-width: 600px;
+            max-width: 650px;
             margin: 0 auto;
             background: #fff;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            padding: 45px;
+            border-radius: 12px;
+            box-shadow: 0 4px 25px rgba(0,0,0,0.04);
         }
 
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 22px;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
             font-weight: 600;
-            color: #555;
+            color: #444;
+            font-size: 15px;
         }
 
         .form-group input, .form-group textarea {
             width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
+            padding: 12px;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
             font-size: 16px;
+            background-color: #fafafa;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: #2E7D32;
+            background-color: #fff;
         }
 
         .form-submit {
             background-color: #2E7D32;
             color: white;
             border: none;
-            padding: 12px 20px;
+            padding: 14px 20px;
             font-size: 16px;
-            border-radius: 4px;
+            border-radius: 6px;
             cursor: pointer;
             width: 100%;
             font-weight: bold;
             transition: background 0.3s;
+            box-shadow: 0 4px 12px rgba(46, 125, 50, 0.2);
         }
 
         .form-submit:hover {
@@ -222,25 +306,34 @@
 
         /* Footer */
         footer {
-            background-color: #212121;
-            color: #bbb;
+            background-color: #1a1a1a;
+            color: #aeaeae;
             text-align: center;
-            padding: 30px 20px;
+            padding: 40px 20px;
             font-size: 14px;
-            border-top: 3px solid #2E7D32;
+            border-top: 4px solid #2E7D32;
         }
 
-        /* Responsive adjustments */
+        footer p {
+            max-width: 600px;
+            margin: 0 auto 10px auto;
+        }
+
+        /* Responsive Breakpoints */
         @media (max-width: 768px) {
             .nav-container {
                 flex-direction: column;
                 gap: 15px;
+                padding: 15px;
             }
             .hero-content h1 {
-                font-size: 32px;
+                font-size: 36px;
             }
             .hero-content p {
-                font-size: 16px;
+                font-size: 17px;
+            }
+            .section-container {
+                padding: 60px 20px;
             }
         }
     </style>
@@ -250,11 +343,11 @@
     <!-- Header / Navigation -->
     <header>
         <nav class="nav-container">
-            <a href="#" class="logo">2GS</a>
+            <a href="#" class="logo">2G2S<span>.</span></a>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#pillars">What We Do</a></li>
-                <li><a href="#insights">Insights</a></li>
+                <li><a href="#portfolio">Our Portfolio</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -264,8 +357,8 @@
     <section class="hero">
         <div class="hero-content">
             <h1>Cultivating the Future of Agriculture</h1>
-            <p>Innovating in primary production, eco-friendly processing, and circular economy solutions to empower sustainable business models.</p>
-            <a href="#pillars" class="cta-btn">Explore Our Pillars</a>
+            <p>Driving vertical integration, primary agro-production, and bio-energy frameworks to construct scalable, low-impact commercial operations.</p>
+            <a href="#portfolio" class="cta-btn">View Our Operations</a>
         </div>
     </section>
 
@@ -273,7 +366,7 @@
     <section id="about" class="about-section">
         <div class="about-content">
             <h2 class="section-title">Our Vision</h2>
-            <p>At 2GS, we bridge the gap between traditional agricultural production and modern, tech-driven business practices. Our goal is to design self-sustaining, vertically integrated agro-ecological systems that protect the environment while maximizing productivity.</p>
+            <p>2G2S stands at the intersection of modern corporate structure and eco-conscious agricultural execution. We engineer high-yielding, self-sustaining agri-business models designed to transition raw raw materials into consumer-ready products, maximizing efficiency through complete waste-to-energy integration.</p>
         </div>
     </section>
 
@@ -283,15 +376,55 @@
         <div class="grid">
             <div class="card">
                 <h3>Agro-Processing & Production</h3>
-                <p>Developing high-quality, branded consumer products from sustainable primary agricultural assets using efficient, modern production frameworks.</p>
+                <p>Establishing advanced local processing pipelines to handle high-demand primary crops and dairy essentials, adding substantial value prior to market distribution.</p>
             </div>
             <div class="card">
-                <h3>Sustainable Ag-Tech</h3>
-                <p>Integrating smart, eco-friendly technological systems like biogas integration to power operations cleanly and utilize zero-waste cycles.</p>
+                <h3>Sustainable Bio-Tech</h3>
+                <p>Deploying advanced technical circular infrastructure—such as centralized biogas integration—to generate closed-loop energy systems that significantly lower operational overhead.</p>
             </div>
             <div class="card">
-                <h3>Strategic Alliances</h3>
-                <p>Building strong collaborative corporate and community partnerships to scale agro-ecological networks across key regional markets.</p>
+                <h3>Structured Business Networks</h3>
+                <p>Fostering scalable economic frameworks through unified joint associations, securing localized supply chains, and driving shared regional growth.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio / Showcase Section -->
+    <section id="portfolio" class="section-container" style="background-color: #ffffff; border-top: 1px solid #eee; border-bottom: 1px solid #eee; max-width: 100%;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+            <h2 class="section-title">Operational Focus Areas</h2>
+            <div class="gallery-grid">
+                
+                <!-- Project 1 -->
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1527156279075-f828a014b85d?auto=format&fit=crop&w=600&q=80" alt="Dairy Processing" class="gallery-img">
+                    <div class="gallery-info">
+                        <span class="tag">Consumer Goods</span>
+                        <h4>Premium Dairy Processing</h4>
+                        <p>Streamlining high-standard localized milk acquisition and modern processing frameworks to deliver nutritious consumer-ready products directly to retail spaces.</p>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1595246140625-573b715d11dc?auto=format&fit=crop&w=600&q=80" alt="Oil Processing" class="gallery-img">
+                    <div class="gallery-info">
+                        <span class="tag">Industrial Production</span>
+                        <h4>Edible Oil Refining</h4>
+                        <p>Utilizing high-efficiency automated pressing machinery to refine essential oilseeds, minimizing standard raw component export waste while serving local market demands.</p>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?auto=format&fit=crop&w=600&q=80" alt="Biogas Energy" class="gallery-img">
+                    <div class="gallery-info">
+                        <span class="tag">Circular Energy</span>
+                        <h4>Closed-Loop Biogas Systems</h4>
+                        <p>Converting agricultural processing byproducts directly into operational electrical energy and high-grade organic bio-fertilizers, achieving total self-reliance.</p>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -300,27 +433,28 @@
     <section id="contact" class="section-container">
         <h2 class="section-title">Partner With Us</h2>
         <div class="contact-form">
-            <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Message sent successfully!');">
+            <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Inquiry logged successfully!');">
                 <div class="form-group">
-                    <label for="name">Full Name</label>
-                    <input type="text" id="name" required placeholder="Your Name">
+                    <label for="name">Full Name / Corporate Entity</label>
+                    <input type="text" id="name" required placeholder="Your Name or Company">
                 </div>
                 <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" required placeholder="name@example.com">
+                    <label for="email">Corporate Email Address</label>
+                    <input type="email" id="email" required placeholder="representative@company.com">
                 </div>
                 <div class="form-group">
-                    <label for="message">Message / Inquiry</label>
-                    <textarea id="message" rows="5" required placeholder="Tell us about your project or partnership inquiry..."></textarea>
+                    <label for="message">Project Scope / Partnership Inquiry</label>
+                    <textarea id="message" rows="5" required placeholder="Outline your collaborative intentions or operational inquiries..."></textarea>
                 </div>
-                <button type="submit" class="form-submit">Send Inquiry</button>
+                <button type="submit" class="form-submit">Submit Inquiry</button>
             </form>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 2GS. All rights reserved. Driving innovation in modern agriculture and circular economies.</p>
+        <p>&copy; 2026 2G2S. All rights reserved.</p>
+        <p style="font-size: 12px; color: #777;">Accelerating structural innovation in modern agro-ecological production and closed-loop bio-economies.</p>
     </footer>
 
 </body>
