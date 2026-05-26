@@ -5,29 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>2G2S Sebeta Integrated Agro-Ecological Hub</title>
     <style>
+        /* 1. GLOBAL STYLES & RESET */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
         }
 
         body {
-            background-color: #111;
+            background-color: #f8fafc;
+            color: #334155;
             overflow-x: hidden;
+            line-height: 1.6;
         }
 
+        /* 2. HERO HEADER SECTION */
         .hero-section {
             position: relative;
             width: 100%;
             height: 100vh; 
-            
-            /* UPDATED: Looks for the newly renamed image file */
-            background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.25)), url('farm-bg.jpg');
+            background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.35)), url('farm-bg.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            
             display: flex;
             flex-direction: column;
         }
@@ -37,11 +39,14 @@
             justify-content: space-between;
             align-items: center;
             padding: 18px 5%;
-            background-color: rgba(34, 61, 41, 0.85); 
-            backdrop-filter: blur(5px); 
+            background-color: rgba(34, 61, 41, 0.9); 
+            backdrop-filter: blur(8px); 
             width: 100%;
             z-index: 10;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            position: fixed;
+            top: 0;
+            left: 0;
         }
 
         .logo-container {
@@ -51,12 +56,9 @@
         }
 
         .logo-main {
-            font-size: 1.9rem;
+            font-size: 1.8rem;
             font-weight: 800;
-            letter-spacing: 1.5px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
+            letter-spacing: 1px;
         }
 
         .logo-sub {
@@ -78,16 +80,12 @@
             text-decoration: none;
             font-size: 0.95rem;
             font-weight: 500;
-            letter-spacing: 0.5px;
-            transition: color 0.2s ease, border-bottom 0.2s ease;
+            transition: color 0.2s ease;
             padding-bottom: 4px;
-            border-bottom: 2px solid transparent;
         }
 
-        .nav-links a:hover, 
-        .nav-links a.active {
+        .nav-links a:hover {
             color: #bbf7d0; 
-            border-bottom: 2px solid #bbf7d0;
         }
 
         .hero-content-area {
@@ -95,35 +93,34 @@
             display: flex;
             justify-content: center;
             align-items: flex-end; 
-            padding-bottom: 80px; 
+            padding-bottom: 100px; 
         }
 
         .content-card {
-            background-color: rgba(0, 0, 0, 0.6); 
-            backdrop-filter: blur(4px);
-            padding: 45px 65px;
+            background-color: rgba(0, 0, 0, 0.65); 
+            backdrop-filter: blur(5px);
+            padding: 40px 60px;
             text-align: center;
             max-width: 900px;
             width: 90%;
-            border-radius: 4px;
+            border-radius: 6px;
             box-shadow: 0 10px 35px rgba(0, 0, 0, 0.4);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .content-card h1 {
             color: #ffffff;
-            font-size: 2.8rem;
-            font-weight: 400;
-            letter-spacing: 3px;
+            font-size: 2.6rem;
+            font-weight: 600;
+            letter-spacing: 2px;
             margin-bottom: 15px;
         }
 
         .content-card p {
             color: #e2e8f0;
-            font-size: 1.25rem;
-            margin-bottom: 30px;
+            font-size: 1.2rem;
+            margin-bottom: 25px;
             font-weight: 300;
-            letter-spacing: 0.5px;
         }
 
         .btn-action {
@@ -131,26 +128,126 @@
             background-color: #3b7a42; 
             color: #ffffff;
             text-decoration: none;
-            padding: 14px 36px;
-            font-size: 1.05rem;
+            padding: 14px 32px;
+            font-size: 1rem;
             font-weight: 600;
             border-radius: 4px;
-            letter-spacing: 0.5px;
-            transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.2s ease, transform 0.15s ease;
         }
 
         .btn-action:hover {
             background-color: #2d5e33;
             transform: translateY(-2px);
-            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
         }
 
+        /* 3. MISSION & SUMMARY SECTION */
+        .mission-section {
+            padding: 90px 10%;
+            text-align: center;
+            background-color: #ffffff;
+        }
+
+        .mission-section h2 {
+            font-size: 2.2rem;
+            color: #1e3a1e;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .mission-section h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: #3b7a42;
+            margin: 10px auto 0 auto;
+            border-radius: 2px;
+        }
+
+        .mission-section p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.15rem;
+            color: #475569;
+        }
+
+        /* 4. OPERATIONAL PILLARS GRID */
+        .pillars-section {
+            padding: 60px 5% 100px 5%;
+            background-color: #f1f5f9;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            color: #1e3a1e;
+            margin-bottom: 50px;
+        }
+
+        .pillars-grid {
+            display: flex;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .pillar-card {
+            background: #ffffff;
+            padding: 40px 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            text-align: center;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            flex: 1;
+            min-width: 260px;
+            max-width: 280px;
+            border-top: 5px solid #3b7a42;
+        }
+
+        .pillar-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .pillar-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .pillar-card h3 {
+            font-size: 1.3rem;
+            color: #1e3a1e;
+            margin-bottom: 15px;
+        }
+
+        .pillar-card p {
+            font-size: 0.95rem;
+            color: #64748b;
+        }
+
+        /* 5. FOOTER SECTION */
+        .main-footer {
+            background-color: #1e293b;
+            color: #94a3b8;
+            padding: 40px 5%;
+            text-align: center;
+            border-top: 4px solid #3b7a42;
+        }
+
+        .main-footer p {
+            font-size: 0.9rem;
+        }
+
+        /* 6. MOBILE RESPONSIVE MEDIA QUERIES */
         @media (max-width: 768px) {
             .navbar {
                 flex-direction: column;
                 gap: 15px;
-                text-align: center;
+                position: relative;
                 padding: 15px;
             }
             .nav-links {
@@ -158,22 +255,29 @@
                 flex-wrap: wrap;
                 justify-content: center;
             }
+            .hero-section {
+                height: auto;
+                min-height: 100vh;
+            }
             .hero-content-area {
-                padding-bottom: 40px;
+                padding: 60px 20px;
             }
             .content-card {
                 padding: 30px 20px;
             }
             .content-card h1 {
                 font-size: 1.8rem;
-                letter-spacing: 1px;
             }
-            .content-card p {
-                font-size: 1rem;
+            .mission-section {
+                padding: 60px 5%;
             }
-            .btn-action {
-                padding: 12px 25px;
-                font-size: 0.95rem;
+            .pillars-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+            .pillar-card {
+                max-width: 100%;
+                width: 100%;
             }
         }
     </style>
@@ -181,33 +285,68 @@
 <body>
 
     <header class="hero-section">
-        
         <nav class="navbar">
             <div class="logo-container">
-                <div class="logo-main">
-                    <span style="font-size: 1.5rem;">🌱</span> 2G2S
-                </div>
-                <div class="logo-sub">2G2S Sebeta Integrated Agro-Ecological Hub</div>
+                <div class="logo-main">🌱 2G2S</div>
+                <div class="logo-sub">Sebeta Integrated Agro-Ecological Hub</div>
             </div>
             <ul class="nav-links">
-                <li><a href="#" class="active">Home</a></li>
-                <li><a href="#">Dairy Unit</a></li>
-                <li><a href="#">Biogas</a></li>
-                <li><a href="#">Aquaculture</a></li>
-                <li><a href="#">Our Story</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#mission">Our Mission</a></li>
+                <li><a href="#pillars">Operational Pillars</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
 
-        <div class="hero-content-area">
+        <div class="hero-content-area" id="home">
             <div class="content-card">
                 <h1>NURTURING OUR NEXT GENERATION</h1>
                 <p>Welcome to the 2G2S Sebeta Dairy Farm and Calf Rearing Unit.</p>
-                <a href="#" class="btn-action">Learn More About Our Calf Programs</a>
+                <a href="#pillars" class="btn-action">Explore Our Operations</a>
             </div>
         </div>
-
     </header>
+
+    <section class="mission-section" id="mission">
+        <h2>Our Core Mission</h2>
+        <p>
+            The Sebeta Integrated Agro-Ecological Hub (2G2S) is dedicated to building sustainable, high-yield, closed-loop agricultural systems. By fusing modern dairy production with clean bio-energy recovery and local aquaculture ecosystems, we create a thriving agricultural environment that respects nature and strengthens the regional food economy.
+        </p>
+    </section>
+
+    <section class="pillars-section" id="pillars">
+        <h2 class="section-title">Our Integrated Operational Pillars</h2>
+        
+        <div class="pillars-grid">
+            <div class="pillar-card">
+                <div class="pillar-icon">🐄</div>
+                <h3>Dairy Processing Unit</h3>
+                <p>Focused on high-quality dairy production, advanced calf rearing programs, and sustainable milk harvesting operations designed for maximizing livestock health and yields.</p>
+            </div>
+
+            <div class="pillar-card">
+                <div class="pillar-icon">⚡</div>
+                <h3>Biogas Energy Recovery</h3>
+                <p>Converting farm waste into pure renewable energy. Our closed-loop bio-digester systems power operations while producing natural, nutrient-dense organic fertilizer.</p>
+            </div>
+
+            <div class="pillar-card">
+                <div class="pillar-icon">🐟</div>
+                <h3>Sustainable Aquaculture</h3>
+                <p>Utilizing filtered, nutrient-rich water systems to cultivate local fish species, maximizing efficient space use and diversifying regional food production pathways.</p>
+            </div>
+
+            <div class="pillar-card">
+                <div class="pillar-icon">🌾</div>
+                <h3>Farmer Training Hub</h3>
+                <p>Empowering local community agriculturalists with hands-on technical skills, modern ecological workflows, and collaborative cooperative business frameworks.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer" id="contact">
+        <p>&copy; 2026 2G2S Sebeta Integrated Agro-Ecological Hub. All Rights Reserved.</p>
+    </footer>
 
 </body>
 </html>
